@@ -1,13 +1,7 @@
 FROM ubuntu:latest
 
 RUN apt-get update && apt-get upgrade -y
-
 RUN apt-get install -y curl software-properties-common
-
-
-## dev tools to build
-#RUN apt-get install -y git libprotobuf-dev protobuf-compiler vim
-
 
 
 # install java
@@ -19,9 +13,6 @@ RUN \
   rm -rf /var/lib/apt/lists/* && \
   rm -rf /var/cache/oracle-jdk8-installer
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
-
-
-
 
 
 # install hadoop
@@ -43,10 +34,6 @@ RUN curl -s http://apache.mesi.com.ar/hive/hive-2.1.0/apache-hive-2.1.0-bin.tar.
 ENV HIVE_HOME /usr/local/hive
 ENV PATH $HIVE_HOME/bin:$PATH
 
-#RUN cd $HIVE_HOME/conf
-#RUN cp hive-default.xml.template hive-site.xml
-#ADD hive-site.xml $HIVE_HOME/conf/
 
 # Derby for Hive metastore backend
-RUN cd $HIVE_HOME
-RUN $HIVE_HOME/bin/schematool -initSchema -dbType derby
+RUN cd $HIVE_HOME && $HIVE_HOME/bin/schematool -initSchema -dbType derby
