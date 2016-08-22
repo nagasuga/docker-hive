@@ -1,7 +1,8 @@
 FROM ubuntu:latest
 
+# update and install basic tools
 RUN apt-get update && apt-get upgrade -y
-RUN apt-get install -y curl software-properties-common
+RUN apt-get install -yq curl software-properties-common
 
 
 # install java
