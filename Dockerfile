@@ -1,4 +1,5 @@
 FROM ubuntu:latest
+MAINTAINER Nagasuga
 
 # update and install basic tools
 RUN apt-get update && apt-get upgrade -y
