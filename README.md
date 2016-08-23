@@ -13,11 +13,7 @@ Docker image to setup Apache Hadoop and Hive using derby as metastore backend.
 ### Setup
 
 1. Install [docker](https://docs.docker.com/docker-for-mac/)
-2. Pull and start docker image
-    ```
-    docker run nagasuga/docker-hive
-    ```
-3. Execute to start Hive CLI
+2. Execute to start Hive CLI
     ```
     docker run -i -t nagasuga/docker-hive /bin/bash -c 'cd /usr/local/hive && ./bin/hive'
     ```
