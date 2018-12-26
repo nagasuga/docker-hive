@@ -19,7 +19,7 @@ ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 
 # install hadoop
 RUN mkdir /usr/local/hadoop
-RUN curl -s http://apache.claz.org/hadoop/common/hadoop-2.7.2/hadoop-2.7.2.tar.gz | tar -xz -C /usr/local/hadoop --strip-components 1
+RUN curl -s http://apache.claz.org/hadoop/common/hadoop-2.7.7/hadoop-2.7.7.tar.gz | tar -xz -C /usr/local/hadoop --strip-components 1
 ENV HADOOP_HOME /usr/local/hadoop
 ENV HADOOP_INSTALL $HADOOP_HOME
 ENV PATH $PATH:$HADOOP_INSTALL/sbin
@@ -32,7 +32,7 @@ ENV PATH $HADOOP_HOME/bin:$PATH
 
 # install hive
 RUN mkdir /usr/local/hive
-RUN curl -s http://apache.mesi.com.ar/hive/hive-2.1.0/apache-hive-2.1.0-bin.tar.gz | tar -xz -C /usr/local/hive --strip-components 1
+RUN curl -s https://archive.apache.org/dist/hive/hive-3.1.1/apache-hive-3.1.1-bin.tar.gz | tar -xz -C /usr/local/hive --strip-components 1
 ENV HIVE_HOME /usr/local/hive
 ENV PATH $HIVE_HOME/bin:$PATH
 
